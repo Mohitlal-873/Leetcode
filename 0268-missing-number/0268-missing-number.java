@@ -1,26 +1,30 @@
 class Solution {
-    public int missingNumber(int[] nums) {
-        //using cyclic sort
-        int i=0;
-        while(i<nums.length){
-            int correct=nums[i];
-            if(nums[i]<nums.length && nums[i]!=nums[correct]){
-                swap(nums,correct,i);
-            }
-            else
-            i++;
-        }
-        for(int index=0;index<nums.length;index++){
-            if(index!=nums[index]){
-                return index;
-            }
-        }
-        return nums.length;
-    }
-    static void swap(int arr[],int a,int b)
-{
-    int temp=arr[a];
-    arr[a]=arr[b];
-    arr[b]=temp;
-}
+    public int missingNumber(int[] arr) {
+     int i=0;
+		while(i<arr.length) {
+			int correctIndex=arr[i];
+			if(arr[i]<arr.length && arr[i]!= arr[correctIndex]) {
+				swap(arr,i,correctIndex);
+			}
+			else {
+				i++;
+			}
+			
+			
+		}
+		for( int j=0;j<arr.length;j++) {
+			if( arr[j]!=j) {
+				return j;
+			}
+			
+		}
+		return arr.length;
+		
+	}
+	 
+    static void swap(int arr[],int index1,int index2) {
+		int temp=arr[index1];
+		arr[index1]=arr[index2];
+		arr[index2]=temp;
+	}  
 }
