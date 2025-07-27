@@ -15,7 +15,7 @@ class Solution {
             return mid;
           }
        } 
-       return start;
+       return end;
 
     }
 }
