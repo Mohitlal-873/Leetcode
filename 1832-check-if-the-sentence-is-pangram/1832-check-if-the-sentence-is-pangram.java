@@ -4,11 +4,9 @@ class Solution {
         for( int i=0;i<sentence.length();i++){
             alpha.add(sentence.charAt(i));
         }
-        for(char ch='a'; ch<='z'; ch++){
-            if(!alpha.contains(ch)){
-                return false;
-            }
+        if(alpha.size()==26){
+            return true;
         }
-        return true;
+        return false;
     }
 }
