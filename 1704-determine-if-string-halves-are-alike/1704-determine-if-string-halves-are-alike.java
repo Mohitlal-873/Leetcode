@@ -1,30 +1,18 @@
 class Solution {
     public boolean halvesAreAlike(String s) {
-        String str = s.toLowerCase();
-        char vowel[]={'a','e','i','o','u'};
-        HashSet <Character> set = new HashSet<>();
-        for(char ch : vowel){
-            set.add(ch);
-        }
-
-        String substr1=str.substring(0,(str.length()/2));
-        String substr2=str.substring(str.length()/2,str.length());
-        int count1=0;
-        int count2=0;
-
-        for(char ch1 :substr1.toCharArray()){
-            if(set.contains(ch1)){
-                count1++;
+        String vowel="aeiouAEIOU";
+         int counta=0;
+         int countb=0;
+        for( int i =0;i<s.length()/2;i++){
+            if(vowel.indexOf(s.charAt(i))!=-1){
+                counta++;
+            }
+            if(vowel.indexOf(s.charAt((s.length()/2)+i))!=-1){
+                countb++;
             }
         }
         
-        for(char ch2 : substr2.toCharArray()){
-            if(set.contains(ch2)){
-                count2++;
-            }
-        }
-        return count1==count2;
-
+        return counta==countb;
 
     }
 }
