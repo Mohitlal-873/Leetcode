@@ -7,8 +7,8 @@ class Solution {
             set.add(ch);
         }
 
-        String substr1=str.substring(0,(str.length()/2)-1);
-        String substr2=str.substring(str.length()/2,str.length()-1);
+        String substr1=str.substring(0,(str.length()/2));
+        String substr2=str.substring(str.length()/2,str.length());
         int count1=0;
         int count2=0;
 
