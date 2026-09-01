@@ -3,17 +3,17 @@ class Solution {
         if(nums.length==1 && nums[0]==0){
             nums[0]=0;
         }
-        for(int i=0;i<nums.length-1;i++){
-          for(int j=i+1;j<nums.length;j++){
-             if(nums[i]==0){
-                swap(i,j,nums);
-             }
-             else{
-                break;
-             }
-          }
+        int left=0;
+        for(int right=0;right<nums.length;right++){
+            if(nums[right]!=0){
+                swap(left,right,nums);
+                left++;
+            }
+
         }
-    }
+       
+        }
+    
     public void swap(int i,int j,int[] nums){
         int temp = nums[i];
         nums[i]=nums[j];
